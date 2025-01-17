@@ -61,7 +61,9 @@ class MethodChannelNfcHostCardEmulation extends NfcHostCardEmulationPlatform {
 
   @override
   Future<NfcState> checkDeviceNfcState() async {
+    debugPrint("Checking NFC state");
     final state = await methodChannel.invokeMethod<bool?>('checkNfc');
+    debugPrint("NFC state: $state");
     switch (state) {
       case true:
         return NfcState.enabled;

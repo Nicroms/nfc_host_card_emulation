@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 34
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -42,5 +42,17 @@ android {
 
     defaultConfig {
         minSdkVersion 16
+    }
+}
+
+
+dependencies {
+    implementation(files('libs/nxpnfcandroidlib-release-protected.aar'))
+    implementation 'com.google.firebase:firebase-core:18.0.0'
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
     }
 }
